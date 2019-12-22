@@ -10,12 +10,20 @@ class Post extends Component {
       }
     ) 
   }
+  editPost = () => {
+    this.props.dispatch(
+      {
+        type: 'EDIT_POST',
+        id: this.props.post.id
+      }
+    ) 
+  }
   render() {
     return (
       <div>
         <h2>{this.props.post.title}</h2>
         <p>{this.props.post.message}</p>
-        <button>Edit</button>
+        <button onClick={this.editPost}>Edit</button>
         <button onClick={this.deletePost}>Delete</button>
       </div>
     );
